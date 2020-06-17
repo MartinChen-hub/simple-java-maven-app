@@ -7,6 +7,9 @@ pipeline {
         }
     }
     stages {
+        stage('单元测试') {
+            echo "测试阶段"
+        }
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
