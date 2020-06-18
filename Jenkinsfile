@@ -11,5 +11,12 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
+        stage('运行 Kubectl') {
+            steps {
+                sh './jenkins/scripts/k8s-deploy-admin-api.sh'
+                sh './jenkins/scripts/k8s-deploy-wx-api.sh'
+            }
+        }
     }
+
 }
