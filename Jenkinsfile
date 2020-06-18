@@ -7,7 +7,7 @@ podTemplate(label: label,serviceAccount:'jenkins-k8s-sa',containers: [
 ], volumes: [
   hostPathVolume(mountPath: '/root/.m2', hostPath: '/var/run/m2'),
   hostPathVolume(mountPath: '/home/jenkins/.kube', hostPath: '/root/.kube'),
-  hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock')
+  hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock'),
   hostPathVolume(mountPath: '/opt/maven/repository', hostPath: '/opt/maven/repository')
 ]) {
   node(label) {
